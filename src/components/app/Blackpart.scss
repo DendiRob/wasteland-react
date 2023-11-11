@@ -1,0 +1,44 @@
+.blackpart {
+    background: url('../../resources/img/backgrounds/abovebackground.png') no-repeat ;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    padding-bottom: 0;
+    z-index: 2;
+    margin-top: -440px;
+    &__stroke {
+        &_overlay {
+            width: 1500px;
+            height: 200px;
+            position: absolute;
+            top: 745px;
+            z-index: 0;
+            left: -40px;
+            transform: rotate(7deg);
+            background: linear-gradient(256deg, #110A1D 20%, #110A1D 90%);
+            filter: blur(70px);
+        
+        }
+    }
+}
+@media (max-width: 900px) {
+    .blackpart {
+        margin-top: -195px;
+        &__stroke {
+            &_overlay {
+                top: 990px;
+            
+            }
+        }
+    }
+}
+@media (max-width: 500px) {
+    .blackpart {
+        margin-top: -345px;
+        &__stroke {
+            &_overlay {
+                top: 830px;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+.header {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+        width: 275px;
+        height: 32px;
+    }
+    &__nav {
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        max-width: 365px;
+        display: flex;
+        justify-content: space-between;
+        &_link {
+            text-decoration: none;
+            color:rgba(255, 255, 255, 0.70);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            &:hover {
+                color: #FFF;
+            }
+        }
+        &_connect-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 302px;
+        }
+        &_connect-wrapper .connect {
+            &__social {
+                width: 22px;
+                height: 22px;
+            }
+            &__burger {
+                display: none;
+            }
+            &__btn {
+                padding: 16px 24px;
+                color: #FFF;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #FFF;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+        }
+    }
+    
+}

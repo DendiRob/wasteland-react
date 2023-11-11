@@ -1,0 +1,24 @@
+@media (max-width: 320px) {
+    .poster {
+        &__banner {
+            background: url('../../resources/icons/poster/warlordgirlfriend-mobile.png') 50%/cover no-repeat;
+            width: 320px;
+            height: 570px;
+            &_btn {
+                padding: 16px 24px;
+                width: 250px;
+                margin: 0 auto;
+                animation: none;
+                text-align: center;
+            }
+            &_link {
+                margin-top: 30px;
+                width: 320px;
+                img {
+                    margin: 0 auto;
+                    width: 290px;
+                }
+            }
+        }
+    }
+}

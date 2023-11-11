@@ -1,0 +1,31 @@
+@media (max-width: 1100px) {
+    .pickYour {
+        &__descr {
+            font-size: 50px;
+        }
+    }
+}
+@media (max-width: 770px) {
+    .pickYour {
+        &__btns {
+            flex-direction: column;
+            padding: 0 5px 0 5px;
+            &_left {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+@media (max-width: 617px) {
+    .pickYour {
+        margin-top: 50px;
+    }
+}
+@media (max-width: 500px) {
+    .pickYour {
+        margin-top: 150px;
+        &__descr {
+            font-size: 35px;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.drawingFor {
+    margin-top: 190px;
+    transform: rotate(4deg);
+    &__title {
+        color:  #FFF;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__board {
+        min-width: 105%;
+        margin-left: -10px;
+        height: 85px;
+        background-color: #FBE700;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &_item{
+            transform: rotate(-4deg);
+            &-point {
+                width: 9px;
+                height: 9px;
+                border-radius: 100%;
+                background-color: #000;
+            }
+            &-third {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.poster {
+    margin-top: 190px;
+    &__banner {
+        background: url('../../resources/img/poster/poster-desktop.png') 50%/cover no-repeat;
+        width: 100%;
+        height: 270px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &_btn {
+            padding: 16px 24px;
+            color: #000000;
+            background-color: #FBE700;
+            border-radius: 10px;
+            text-transform: uppercase;
+            position: relative;
+            animation-name: closer;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        &_link {
+            text-decoration: none;
+            img {
+                display: block;
+                width: 330px;   
+                animation-name: closer;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+}
+@keyframes closer {
+    0%{
+        scale: 1;
+
+    }
+    50%{
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
+    }
+}
