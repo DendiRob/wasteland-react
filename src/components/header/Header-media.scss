@@ -22,9 +22,14 @@
 }
 @media (max-width: 900px) {
     .header {
+        position: fixed;
+        top: 0;
+        z-index: 4;
         justify-content: space-between;
         &__logo {
             margin-left: 20px;
+            width: 158px;
+            height: 23px;
         }
         &__nav {
             display: none;
@@ -55,15 +60,6 @@
             &_btn {
                 display: none;
             }
-        }
-    }
-}
-@media (max-width: 900px) {
-    .header {
-        justify-content: space-between;
-        &__logo {
-            width: 158px;
-            height: 23px;
         }
     }
 }

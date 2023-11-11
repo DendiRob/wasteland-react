@@ -5,7 +5,7 @@
     height: 100%;
     padding-bottom: 0;
     z-index: 2;
-    margin-top: -440px;
+    margin-top: -490px;
     &__stroke {
         &_overlay {
             width: 1500px;
@@ -21,12 +21,17 @@
         }
     }
 }
+@media (max-width: 1265px) {
+    .blackpart {
+        margin-top: -520px;
+    }
+}
 @media (max-width: 900px) {
     .blackpart {
-        margin-top: -195px;
+        margin-top: -295px;
         &__stroke {
             &_overlay {
-                top: 990px;
+                top: 950px;
             
             }
         }
@@ -37,7 +42,7 @@
         margin-top: -345px;
         &__stroke {
             &_overlay {
-                top: 830px;
+                top: 930px;
             }
         }
     }

@@ -9,7 +9,7 @@ const Promo = () => {
     return (
         <div className="promo">
                     <div className="content-wrapper">
-                        <Header />
+                        {/* <Header /> */}
                         <div className="promo__mainContent">
                             <div className="promo__sign">New nft collection</div>
                             <h1 className="promo__title">Wasteland Sirens</h1>

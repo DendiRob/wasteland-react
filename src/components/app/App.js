@@ -2,6 +2,8 @@ import './Blackpart.scss';
 import './App.scss';
 import './App-media.scss';
 
+// import { useSelector } from 'react-redux';
+
 import Market from '../market/Market';
 import AboutArtist from '../aboutArtist/AboutArtist';
 import Promo from '../promo/Promo';
@@ -10,12 +12,16 @@ import DrawingFor from '../drawingFor/DrawingFor';
 import PickYour from '../pickYour/PickYour';
 import Poster from '../poster/Poster';
 import Footer from '../footer/Footer';
+import Menu from '../menu/Menu';
+import Header from '../header/Header';
 
 
 function App() {
   return (
     <>
+        <Menu />
         <div className="container">
+        <Header />
             <div className="container__red">
                 <Promo />
             </div>

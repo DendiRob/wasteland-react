@@ -5,9 +5,17 @@ import twitter from '../../resources/icons/header/twitter.svg';
 import logo from '../../resources/icons/header/logo.png';
 import telegram from '../../resources/icons/header/telegram.svg';
 
+import { useDispatch } from 'react-redux';
+import { openMenu } from '../../store/menuSlice';
+
+
 
 
 const Header = () => {
+
+    const dispatch = useDispatch();
+
+
     return(
         <header className="header">
             <img src={logo} alt="logo" className="header__logo"/>
@@ -24,7 +32,7 @@ const Header = () => {
                 <a href="#" className="connect__social">
                     <img src={telegram} alt="telegram"/>
                 </a>
-                <div className="connect__burger">
+                <div className="connect__burger" onClick={() => dispatch(openMenu())}>
                     <div className="connect__burger_item"></div>
                     <div className="connect__burger_item"></div>
                 </div>
