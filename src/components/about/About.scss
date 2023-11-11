@@ -1,5 +1,17 @@
 .about {
     padding: 70px;
+    &__lights {
+        position: absolute;
+        max-width: 900px;
+        max-height: 900px;
+        // background-color: #FBE700;
+        animation-name: twitching;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        top: 300px;
+        left: -140px;
+        z-index: -1;
+    }
     &__textBlock {
         color:  #FFF;
         font-size: 32px;
@@ -51,5 +63,17 @@
     &__descrTitle {
         text-align: center;
         margin-top: 170px;
+    }
+}
+@keyframes twitching {
+    0% {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+        
     }
 }
