@@ -1,0 +1,19 @@
+@media (max-width:478px) {
+    .connectModal {
+        max-width: 310px;
+    }
+}
+@media (max-width:379px) {
+    .connectModal {
+        max-width: 100%;
+        max-height: 250px;
+        border-radius: 24px 24px 0px 0px;
+        &__wrapper {
+            align-items: flex-end;
+        }
+        &__rights {
+            left: 32px;
+            transform: translateX(0);
+        }
+    }
+}

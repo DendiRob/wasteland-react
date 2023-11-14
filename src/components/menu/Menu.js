@@ -5,7 +5,7 @@ import close from '../../resources/icons/header/close.svg';
 import logo from '../../resources/icons/header/logo.png';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { closeMenu } from '../../store/mainSlice';
+import { closeMenu, openConnectModal } from '../../store/mainSlice';
 
 
 const Menu = () => {
@@ -32,7 +32,10 @@ const Menu = () => {
                                 <li className="menu__nav_item"><a href="#">About</a></li>
                             </ul>
                         </nav>
-                        <button className='menu__btn'>connect wallet</button>
+                        <button className='menu__btn' onClick={() => {
+                            dispatch(openConnectModal())
+                            dispatch(closeMenu())
+                        }}>connect wallet</button>
                     </div>
             </div>
         </>
