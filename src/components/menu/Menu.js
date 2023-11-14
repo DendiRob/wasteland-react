@@ -5,12 +5,12 @@ import close from '../../resources/icons/header/close.svg';
 import logo from '../../resources/icons/header/logo.png';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { closeMenu } from '../../store/menuSlice';
+import { closeMenu } from '../../store/mainSlice';
 
 
 const Menu = () => {
 
-    const isMenuOpen = useSelector(store => store.menuStates.isMenuOpen);
+    const isMenuOpen = useSelector(store => store.mainStates.isMenuOpen);
     const dispatch = useDispatch()
     
     return(

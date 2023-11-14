@@ -6,7 +6,7 @@ import logo from '../../resources/icons/header/logo.png';
 import telegram from '../../resources/icons/header/telegram.svg';
 
 import { useDispatch } from 'react-redux';
-import { openMenu } from '../../store/menuSlice';
+import { openMenu,openConnectModal } from '../../store/mainSlice';
 
 
 
@@ -36,7 +36,7 @@ const Header = () => {
                     <div className="connect__burger_item"></div>
                     <div className="connect__burger_item"></div>
                 </div>
-                <div className="connect__btn">Connect Wallet</div>
+                <div className="connect__btn" onClick={() => dispatch(openConnectModal())}>Connect Wallet</div>
             </div>
         </header>
     )

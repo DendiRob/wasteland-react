@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     isMenuOpen: false,
+    isConnectModalOpen: false
 }
 
 const MenuSlice = createSlice({
@@ -14,8 +15,14 @@ const MenuSlice = createSlice({
         },
         closeMenu(state){
             state.isMenuOpen = false;
+        },
+        openConnectModal(state) {
+            state.isConnectModalOpen = true;
+        },
+        closeConnectModal(state) {
+            state.isConnectModalOpen = false;
         }
     }
 })
-export const {openMenu, closeMenu} = MenuSlice.actions;
+export const {openMenu, closeMenu, openConnectModal, closeConnectModal} = MenuSlice.actions;
 export default MenuSlice.reducer;

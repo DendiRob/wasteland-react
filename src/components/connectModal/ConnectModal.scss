@@ -1,0 +1,71 @@
+.connectModal {
+    width: 100%;
+    max-width: 400px;
+    padding: 32px;
+    height: 100%;
+    max-height: 320px;
+    background-color: #000000;
+    border-radius: 24px;
+    position: relative;
+    &__wrapper {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($color: #000000, $alpha: .35);
+        z-index: 20;
+    }
+    &__wallet {
+        padding: 16px 24px;
+        background-color: rgba(252, 121, 0, 0.15);
+        border-radius: 8px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        &_title {
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+        }
+        &_icon {
+            margin-right: 12px;
+        }
+    }
+    &__title {
+        color: #FFF;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        padding-bottom: 24px;
+    }
+    &__rights {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 123px;
+        display: flex;
+        justify-content: space-between;       
+        align-items: center;
+        &_title {
+            color: #FFF;
+            font-family: Unbounded;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            opacity: 0.4;
+            cursor: pointer;
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        cursor: pointer;
+    }
+}
