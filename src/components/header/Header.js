@@ -5,7 +5,7 @@ import twitter from '../../resources/icons/header/twitter.svg';
 import logo from '../../resources/icons/header/logo.png';
 import telegram from '../../resources/icons/header/telegram.svg';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openMenu,openConnectModal } from '../../store/mainSlice';
 
 
@@ -14,6 +14,14 @@ import { openMenu,openConnectModal } from '../../store/mainSlice';
 const Header = () => {
 
     const dispatch = useDispatch();
+    const { userAcc } = useSelector(store => store.mainStates)
+    const shortName = (name) => {
+        if(name.length > 14){
+            return name.substring(0,14) + '...'
+        }else {
+            return name
+        }
+    }
 
 
     return(
@@ -36,7 +44,7 @@ const Header = () => {
                     <div className="connect__burger_item"></div>
                     <div className="connect__burger_item"></div>
                 </div>
-                <div className="connect__btn" onClick={() => dispatch(openConnectModal())}>Connect Wallet</div>
+                <div className="connect__btn" onClick={() => dispatch(openConnectModal())}>{userAcc !== ''? shortName(userAcc) : 'Connect Wallet'}</div>
             </div>
         </header>
     )

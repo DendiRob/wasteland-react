@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      {isConnectModalOpen ? <ConnectModal /> : '  '}
+      {isConnectModalOpen ? <ConnectModal /> : ''}
       <Menu />
       <div className="container">
       <Header />

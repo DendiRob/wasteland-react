@@ -1,10 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
     isMenuOpen: false,
-    isConnectModalOpen: false
+    isConnectModalOpen: false,
+    userAcc: ''
 }
+
+export const connectToAcc = createAsyncThunk(
+    'users/connectToAcc',
+    async () => {
+      const response = await window.ethereum.request({method: "eth_requestAccounts"})
+      return response
+    }
+);
 
 const MenuSlice = createSlice({
     name: 'menu',
@@ -21,7 +30,14 @@ const MenuSlice = createSlice({
         },
         closeConnectModal(state) {
             state.isConnectModalOpen = false;
-        }
+        },
+    },
+    extraReducers: (builder) => {
+        builder
+        .addCase(connectToAcc.fulfilled, (state, action) => {
+            state.userAcc = action.payload[0]
+            console.log(state.userAcc)
+        })
     }
 })
 export const {openMenu, closeMenu, openConnectModal, closeConnectModal} = MenuSlice.actions;

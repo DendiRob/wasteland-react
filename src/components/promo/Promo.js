@@ -1,15 +1,26 @@
-import Header from '../header/Header';
+import { ethers } from 'ethers';
 
 import './Promo.scss';
 import './Promo-media.scss';
 
-import promoGirl from '../../resources/icons/promo/promo-girl.png'
+import promoGirl from '../../resources/icons/promo/promo-girl.png';
+import contarct from '../../collection.json';
+import { useSelector } from 'react-redux';
 
 const Promo = () => {
+
+    const { userAcc } = useSelector(store => store.mainStates);
+    const onMint = () => {
+        if(userAcc !== ''){
+            let contract = new ethers.Contract(contarct.address, contarct.abi, userAcc)
+            contract.mint()
+            console.log(contarct)
+        }
+    }
+
     return (
         <div className="promo">
                     <div className="content-wrapper">
-                        {/* <Header /> */}
                         <div className="promo__mainContent">
                             <div className="promo__sign">New nft collection</div>
                             <h1 className="promo__title">Wasteland Sirens</h1>
@@ -18,7 +29,7 @@ const Promo = () => {
                             <div className="promo__btn-wrapper">
                                 <div className="promo__girl_blur"></div>
                                 <div className="promo__amountOfCollection">A handmade collection of 1,074 unique NFTs.</div>
-                                <button className="promo__btn">Mint</button>
+                                <button className="promo__btn" onClick={onMint}>Mint</button>
                             </div>
                         </div>
                     </div>
