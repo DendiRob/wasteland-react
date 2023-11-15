@@ -33,7 +33,7 @@ const Promo = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="promo__paper"></div>
+                    {/* <div className="promo__paper"></div> */}
             </div>
     )
 }
