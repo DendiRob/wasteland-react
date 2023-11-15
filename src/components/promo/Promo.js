@@ -4,18 +4,20 @@ import './Promo.scss';
 import './Promo-media.scss';
 
 import promoGirl from '../../resources/icons/promo/promo-girl.png';
-import contarct from '../../collection.json';
+import contarctData from '../../collection.json';
 import { useSelector } from 'react-redux';
 
 const Promo = () => {
 
     const { userAcc } = useSelector(store => store.mainStates);
-    const onMint = () => {
+    const onMint = async () => {
         if(userAcc !== ''){
-            let contract = new ethers.Contract(contarct.address, contarct.abi, userAcc)
-            contract.mint()
-            console.log(contarct)
-        }
+            let provider = new ethers.providers.Web3Provider(window.ethereum);
+            let signer = provider.getSigner();
+            let contract = new ethers.Contract(contarctData.address, contarctData.abi, signer);
+
+            let tx = await contract.connect(signer).mint({value: await contract.PRICE()});
+        }   
     }
 
     return (
