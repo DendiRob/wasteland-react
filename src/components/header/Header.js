@@ -29,8 +29,8 @@ const Header = () => {
             <img src={logo} alt="logo" className="header__logo"/>
             <ul className="header__nav">
                 <li className="header__nav_item"><a href="#" className="header__nav_link">Home</a></li>
-                <li className="header__nav_item"><a href="#" className="header__nav_link">About</a></li>
-                <li className="header__nav_item"><a href="#" className="header__nav_link">About Artist</a></li>
+                <li className="header__nav_item"><a href="#" className="header__nav_link">About WS</a></li>
+                <li className="header__nav_item"><a href="#" className="header__nav_link">Artist</a></li>
                 <li className="header__nav_item"><a href="#" className="header__nav_link">WW</a></li>
             </ul>
             <div className="header__nav_connect-wrapper">
