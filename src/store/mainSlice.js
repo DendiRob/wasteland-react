@@ -4,7 +4,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
     isMenuOpen: false,
     isConnectModalOpen: false,
-    userAcc: ''
+    userAcc: '',
+    nftModal: false
 }
 
 export const connectToAcc = createAsyncThunk(

@@ -15,16 +15,18 @@ import Footer from '../footer/Footer';
 import Menu from '../menu/Menu';
 import Header from '../header/Header';
 import ConnectModal from '../connectModal/ConnectModal';
+import NftModal from '../nftModal/NftModal';
 
 
 function App() {
 
-  const isConnectModalOpen = useSelector(store => store.mainStates.isConnectModalOpen);
+  const {isConnectModalOpen, nftModal} = useSelector(store => store.mainStates);
 
 
   return (
     <>
       {isConnectModalOpen ? <ConnectModal /> : ''}
+      {nftModal ? <NftModal /> : ''}
       <Menu />
       <div className="container">
       <Header />

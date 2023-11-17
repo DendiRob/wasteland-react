@@ -1,0 +1,222 @@
+{
+  "fullScreen": {
+    "zIndex": 1
+  },
+  "background": {
+      "color": {
+        "value": ""
+      }
+  },
+  "emitters": {
+    "position": {
+      "x": 50,
+      "y": 100
+    },
+    "rate": {
+      "quantity": 15,
+      "delay": 0.3
+    }
+  },
+  "particles": {
+    "color": {
+      "value": [
+          "#FC9E1C",
+          "#4BC8EFE5",
+          "#F62584",
+          "#BA3E03BF",
+          "#9DED1AD9",
+          "#F54721D9"
+      ]
+    },
+    "move": {
+      "decay": 0.05,
+      "direction": "top",
+      "enable": true,
+      "gravity": {
+        "enable": true
+      },
+      "outModes": {
+        "top": "none",
+        "default": "destroy"
+      },
+      "speed": {
+        "min": 50,
+        "max": 100
+      }
+    },
+    "number": {
+      "value": 0
+    },
+    "opacity": {
+      "value": 1
+    },
+    "rotate": {
+      "value": {
+        "min": 0,
+        "max": 1
+      },
+      "direction": "random",
+      "animation": {
+        "enable": true,
+        "speed": 30
+      }
+    },
+    "tilt": {
+      "direction": "random",
+      "enable": false,
+      "value": {
+        "min": 0,
+        "max": 360
+      },
+      "animation": {
+        "enable": true,
+        "speed": 30
+      }
+    },
+    "size": {
+      "value": {"min": 1, "max": 9},
+      "animation": {
+        "enable": true,
+        "startValue": "min",
+        "count": 1,
+        "speed": 16,
+        "sync": true
+      }
+    },
+    "roll": {
+      "darken": {
+        "enable": true,
+        "value": 25
+      },
+      "enlighten": {
+        "enable": true,
+        "value": 25
+      },
+      "enable": false,
+      "speed": {
+        "min": 5,
+        "max": 5
+      }
+    },
+    "wobble": {
+      "distance": 30,
+      "enable": true,
+      "speed": {
+        "min": -7,
+        "max": 7
+      }
+    },
+    "shape": {
+      "type": [
+          "circle",
+          "image",
+          "square",
+          "polygon"
+      ],
+      "shape": {
+          "type": "square",
+          "width":20,
+          "height":100
+      },
+      "options": {
+          "image": [
+            {
+            "src": "icons/star.svg",
+            "width": 26,
+            "height": 26,
+            "particles": {
+                "size": {
+                  "value": {"min": 1, "max": 13}
+                }
+            }
+            },
+            {
+              "src": "icons/star2.svg",
+              "width": 26,
+              "height": 26,
+              "particles": {
+                  "size": {
+                      "value": {"min": 1, "max": 13}
+                  }
+              }
+          },
+          {
+              "src": "icons/star2.svg",
+              "width": 26,
+              "height": 26,
+              "particles": {
+                  "size": {
+                      "value": 20
+                  }
+              }
+          },
+          {
+              "src": "icons/star3.svg",
+              "width": 26,
+              "height": 26,
+              "particles": {
+                  "size": {
+                  "value": {"min": 1, "max": 13}
+                  }
+              }
+          },
+          {
+              "src": "icons/star3.svg",
+              "width": 26,
+              "height": 26,
+              "particles": {
+                  "size": {
+                  "value": 16
+                  }
+              }
+          },
+          {
+              "src": "icons/rectangle1.png",
+              "width": 51,
+              "height": 37,
+              "particles": {
+                  "size": {
+                  "value": 18
+                  }
+              }
+          },
+          {
+              "src": "icons/rectangle2.png",
+              "width": 47,
+              "height": 44,
+              "particles": {
+                  "size": {
+                  "value": 20
+                  }
+              }
+          },
+          {
+              "src": "icons/rectangle3.png",
+              "width": 46,
+              "height": 43,
+              "particles": {
+                  "size": {
+                  "value": 20
+                  }
+              }
+          }
+          ]
+        }
+    }
+  },
+  "responsive": [
+    {
+      "maxWidth": 1024,
+      "options": {
+        "particles": {
+          "move": {
+            "speed": {
+              "min": 33,
+              "max": 66
+            }
+          }
+        }
+      }
+    }
+  ]
+}
