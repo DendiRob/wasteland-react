@@ -6,11 +6,12 @@ import logo from '../../resources/icons/header/logo.png';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { closeMenu, openConnectModal } from '../../store/mainSlice';
+import { shortName } from '../header/Header';
 
 
 const Menu = () => {
 
-    const isMenuOpen = useSelector(store => store.mainStates.isMenuOpen);
+    const  {isMenuOpen, userAcc} = useSelector(store => store.mainStates);
     const dispatch = useDispatch()
     
     return(
@@ -32,10 +33,10 @@ const Menu = () => {
                                 <li className="menu__nav_item"><a href="#">About</a></li>
                             </ul>
                         </nav>
-                        <button className='menu__btn' onClick={() => {
+                        <button className="menu__btn" onClick={() => {
                             dispatch(openConnectModal())
                             dispatch(closeMenu())
-                        }}>connect wallet</button>
+                        }}>{userAcc !== ''? shortName(userAcc) : 'Connect Wallet'}</button>
                     </div>
             </div>
         </>

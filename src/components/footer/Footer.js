@@ -6,8 +6,7 @@ import './Footer-media.scss';
 
 import twitter from '../../resources/icons/header/twitter.svg';
 import telegram from '../../resources/icons/header/telegram.svg';
-import logo from '../../resources/icons/header/logo.png'
-import { openConnectModal } from '../../store/mainSlice';
+import logo from '../../resources/icons/header/logo.png';
 
 
 const Footer = () => {
@@ -33,7 +32,6 @@ const Footer = () => {
                             <img src={telegram} alt="telegram" />
                         </a>
                     </div>
-                    <button className="content__social_connect" onClick={() => dispatch(openConnectModal())}>Connect Wallet</button>
                 </div>
             </div>
             <div className="footer__right">Copyright © 2023. All rights reserved</div>

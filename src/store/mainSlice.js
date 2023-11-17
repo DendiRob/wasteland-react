@@ -10,9 +10,12 @@ const initialState = {
 
 export const connectToAcc = createAsyncThunk(
     'users/connectToAcc',
-    async () => {
-      const response = await window.ethereum.request({method: "eth_requestAccounts"})
-      return response
+    async (_,{ rejectWithValue }) => {
+        if(!window.ethereum){
+            return rejectWithValue()
+        }
+        const response = await window.ethereum.request({method: "eth_requestAccounts"})
+        return response
     }
 );
 
@@ -43,6 +46,9 @@ const MenuSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+        .addCase(connectToAcc.rejected, (state, action) => {
+            alert('Upload the metamask')
+        })
         .addCase(connectToAcc.fulfilled, (state, action) => {
             state.userAcc = action.payload[0]
             localStorage.setItem("userWallet", state.userAcc)

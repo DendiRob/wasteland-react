@@ -10,18 +10,18 @@ import { openMenu,openConnectModal } from '../../store/mainSlice';
 
 
 
+export const shortName = (name) => {
+    if(name.length > 14){
+        return name.substring(0,14) + '...'
+    }else {
+        return name
+    }
+}
 
 const Header = () => {
 
     const dispatch = useDispatch();
     const { userAcc } = useSelector(store => store.mainStates)
-    const shortName = (name) => {
-        if(name.length > 14){
-            return name.substring(0,14) + '...'
-        }else {
-            return name
-        }
-    }
 
 
     return(
