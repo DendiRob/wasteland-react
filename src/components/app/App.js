@@ -2,7 +2,8 @@ import './Blackpart.scss';
 import './App.scss';
 import './App-media.scss';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUserAcc } from '../../store/mainSlice';
 
 import Market from '../market/Market';
 import AboutArtist from '../aboutArtist/AboutArtist';
@@ -16,13 +17,22 @@ import Menu from '../menu/Menu';
 import Header from '../header/Header';
 import ConnectModal from '../connectModal/ConnectModal';
 import NftModal from '../nftModal/NftModal';
+import { useEffect } from 'react';
+
 
 
 function App() {
 
   const {isConnectModalOpen, nftModal} = useSelector(store => store.mainStates);
-
-
+  const dispatch = useDispatch()
+  
+  useEffect(() => {
+    if(window.ethereum && localStorage.getItem("userWallet")){
+      dispatch(setUserAcc())
+    }
+  }, [])
+  
+  
   return (
     <>
       {isConnectModalOpen ? <ConnectModal /> : ''}

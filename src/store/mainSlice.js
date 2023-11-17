@@ -32,14 +32,23 @@ const MenuSlice = createSlice({
         closeConnectModal(state) {
             state.isConnectModalOpen = false;
         },
+        setUserAcc(state) {
+            state.userAcc = localStorage.getItem("userWallet")
+        },
+        logOut(state) {
+            state.userAcc = '';
+            localStorage.removeItem("userWallet");
+            state.isConnectModalOpen = false
+        }
     },
     extraReducers: (builder) => {
         builder
         .addCase(connectToAcc.fulfilled, (state, action) => {
             state.userAcc = action.payload[0]
-            console.log(state.userAcc)
+            localStorage.setItem("userWallet", state.userAcc)
+            state.isConnectModalOpen = false
         })
     }
 })
-export const {openMenu, closeMenu, openConnectModal, closeConnectModal} = MenuSlice.actions;
+export const {openMenu, closeMenu, openConnectModal, closeConnectModal, setUserAcc, logOut} = MenuSlice.actions;
 export default MenuSlice.reducer;
