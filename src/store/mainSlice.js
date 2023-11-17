@@ -42,6 +42,12 @@ const MenuSlice = createSlice({
             state.userAcc = '';
             localStorage.removeItem("userWallet");
             state.isConnectModalOpen = false
+        },
+        closeNftModal(state) {
+            state.nftModal = false
+        },
+        openNftModal(state) {
+            state.nftModal = true
         }
     },
     extraReducers: (builder) => {
@@ -56,5 +62,14 @@ const MenuSlice = createSlice({
         })
     }
 })
-export const {openMenu, closeMenu, openConnectModal, closeConnectModal, setUserAcc, logOut} = MenuSlice.actions;
+export const {
+    openMenu, 
+    closeMenu, 
+    openConnectModal, 
+    closeConnectModal, 
+    setUserAcc, 
+    logOut,
+    closeNftModal,
+    openNftModal
+} = MenuSlice.actions;
 export default MenuSlice.reducer;

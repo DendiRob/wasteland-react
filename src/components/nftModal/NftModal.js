@@ -7,9 +7,13 @@ import { loadFull } from "tsparticles";
 
 import girlForExample from '../../resources/img/nft/girlexample.png';
 import flowers from '../../resources/icons/nft/flowers.svg';
+import { useDispatch } from 'react-redux';
+import { closeNftModal } from '../../store/mainSlice';
 
 
 const NftModal = () => {
+
+    const dispatch = useDispatch()
 
     const particlesInit = async (main) => {
         console.log(main);
@@ -29,7 +33,7 @@ const NftModal = () => {
                     <img src={flowers} alt="flowers" className="nftModal__ready_flowers" />
                 </div>
                 <div className="nftModal__descr">NFT will reach your wallet in a few minutes</div>
-                <button className='nftModal__btn'>ok</button>
+                <button className='nftModal__btn' onClick={() => dispatch(closeNftModal())}>ok</button>
             </div>
             <Particles
             id="tsparticles"

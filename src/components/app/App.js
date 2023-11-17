@@ -1,6 +1,5 @@
 import './Blackpart.scss';
 import './App.scss';
-import './App-media.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserAcc } from '../../store/mainSlice';

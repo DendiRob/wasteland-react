@@ -10,7 +10,7 @@
   "emitters": {
     "position": {
       "x": 50,
-      "y": 100
+      "y": 50
     },
     "rate": {
       "quantity": 15,
@@ -40,8 +40,8 @@
         "default": "destroy"
       },
       "speed": {
-        "min": 50,
-        "max": 100
+        "min": 100,
+        "max": 150
       }
     },
     "number": {
