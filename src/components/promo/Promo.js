@@ -6,19 +6,23 @@ import './Promo-media.scss';
 import promoGirl from '../../resources/icons/promo/promo-girl.png';
 import contarctData from '../../collection.json';
 import { useSelector } from 'react-redux';
+import { BigNumber } from "ethers";
 
 const Promo = () => {
-
     const { userAcc } = useSelector(store => store.mainStates);
     const onMint = async () => {
         if(userAcc !== ''){
-            let provider = new ethers.providers.Web3Provider(window.ethereum);
-            let signer = provider.getSigner();
-            let contract = new ethers.Contract(contarctData.address, contarctData.abi, signer);
+            try {
+                let provider = new ethers.providers.Web3Provider(window.ethereum);
+                let signer = provider.getSigner();
+                let contract = new ethers.Contract(contarctData.address, contarctData.abi, signer);
 
-            let tx = await contract.connect(signer).mint({value: await contract.PRICE()});
-            const urlphoto = await contract.tokenURI(await contract.currentTokenId)
-            console.log(urlphoto)
+                let tx = await contract.connect(signer).mint({value: await contract.PRICE()});
+                const tokenID = await contract.currentTokenId()
+                console.log(parseInt(tokenID._hex, 16))
+            } catch (error) {
+                console.log(error)
+            }
         }   
     }
 

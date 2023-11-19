@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 
 
 import './Footer.scss';
@@ -11,7 +10,6 @@ import logo from '../../resources/icons/header/logo.png';
 
 const Footer = () => {
 
-    const dispatch = useDispatch()
 
     return(
         <footer className="footer">
