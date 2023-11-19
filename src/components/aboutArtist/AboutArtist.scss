@@ -4,7 +4,14 @@
     margin: 0 auto;
     position: relative;
     margin-top: 220px;
+    &__linkBlock {
+        width: 200px;
+        height: 20px;
+        position: absolute;
+        top: -80px;
+    }
     &__textBlock {
+        position: relative;
         color: #FFF;
         font-size: 32px;
         font-style: normal;

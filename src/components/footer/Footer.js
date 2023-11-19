@@ -18,17 +18,18 @@ const Footer = () => {
             <div className="footer__content">
                 <img src={logo} alt="logo" className="content__logo" />
                 <ul className="content__nav">
-                    <li className="content__nav_item"><a href="#">Home</a></li>
-                    <li className="content__nav_item"><a href="#">Old collection</a></li>
-                    <li className="content__nav_item"><a href="#">About</a></li>
+                    <li className="content__nav_item"><a href="#promo" className="header__nav_link">Home</a></li>
+                    <li className="content__nav_item" ><a href="#aboutws" className="header__nav_link">About WS</a></li>
+                    <li className="content__nav_item"><a href="#aboutartist" className="header__nav_link">Artist</a></li>
+                    <li className="content__nav_item" ><a href="#poster" className="header__nav_link">WW</a></li>
                 </ul>
                 <div className="content__social">
                     <div className="content__social_title">We are on social media</div>
                     <div className="content__social_wrapper">
-                        <a href="#" className="content__social_link">
+                        <a href="https://x.com/BingoBongo_ape?t=ZzRWMwbxC6SGNuIavxy3CA&s=09" rel="noopener noreferrer" target='_blank' className="content__social_link">
                             <img src={twitter} alt="twitter" />
                         </a>
-                        <a href="#" className="content__social_link">
+                        <a href="https://t.me/BingoBongoStudio1" rel="noopener noreferrer" target='_blank' className="content__social_link">
                             <img src={telegram} alt="telegram" />
                         </a>
                     </div>

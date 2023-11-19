@@ -28,10 +28,6 @@ const ConnectModal = () => {
                             <div className="connectModal__wallet_title">Metamask</div>
                         </div>
                 }
-                <div className="connectModal__rights">
-                        <div className="connectModal__rights_title">Privacy</div>
-                        <div className="connectModal__rights_title">Terms</div>
-                </div>
             </div>
         </div>
     )

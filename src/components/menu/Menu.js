@@ -7,6 +7,8 @@ import logo from '../../resources/icons/header/logo.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeMenu, openConnectModal } from '../../store/mainSlice';
 import { shortName } from '../header/Header';
+import { Link } from "react-scroll";
+
 
 
 const Menu = () => {
@@ -28,9 +30,43 @@ const Menu = () => {
                         <img className='menu__logo' src={logo} alt="logo" />
                         <nav>
                             <ul className='menu__nav'>
-                                <li className="menu__nav_item"><a href="#">Home</a></li>
-                                <li className="menu__nav_item"><a href="#">Old collection</a></li>
-                                <li className="menu__nav_item"><a href="#">About</a></li>
+                                <li className="menu__nav_item">
+                                    <Link 
+                                    onClick={() => dispatch(closeMenu())}
+                                    to="promoScroll" 
+                                    smooth={true}
+                                    duration={700} 
+                                    className="header__nav_link"
+                                    >Home</Link>
+
+                                </li>
+                                <li className="menu__nav_item">
+                                    <Link 
+                                    onClick={() => dispatch(closeMenu())}
+                                    to="aboutwsScroll" 
+                                    smooth={true}
+                                    duration={700} 
+                                    className="header__nav_link"
+                                    >About WS</Link>
+                                </li>
+                                <li className="menu__nav_item">
+                                    <Link 
+                                    onClick={() => dispatch(closeMenu())}
+                                    to="aboutartistScroll" 
+                                    smooth={true}
+                                    duration={700} 
+                                    className="header__nav_link"
+                                    >Artist</Link>
+                                </li>
+                                <li className="menu__nav_item">
+                                    <Link 
+                                    onClick={() => dispatch(closeMenu())}
+                                    to="posterScroll" 
+                                    smooth={true}
+                                    duration={700}
+                                    className="header__nav_link"
+                                    >WW</Link>
+                                </li>
                             </ul>
                         </nav>
                         <button className="menu__btn" onClick={() => {

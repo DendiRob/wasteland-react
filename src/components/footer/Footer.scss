@@ -47,10 +47,12 @@
                 margin-bottom: 20px;
             }
             &_link {
-                margin-right: 25px;
-                width: 22px;
-                height: 22px;
-                text-decoration: none;
+                img {
+                    margin-right: 25px;
+                    width: 22px;
+                    height: 22px;
+                    text-decoration: none;
+                }
             }
             &_wrapper {
                 margin-bottom: 55px;

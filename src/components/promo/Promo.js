@@ -17,11 +17,13 @@ const Promo = () => {
             let contract = new ethers.Contract(contarctData.address, contarctData.abi, signer);
 
             let tx = await contract.connect(signer).mint({value: await contract.PRICE()});
+            const urlphoto = await contract.tokenURI(await contract.currentTokenId)
+            console.log(urlphoto)
         }   
     }
 
     return (
-        <div className="promo">
+        <div className="promo" name='promoScroll'>
                     <div className="content-wrapper">
                         <div className="promo__mainContent">
                             <div className="promo__sign">New nft collection</div>

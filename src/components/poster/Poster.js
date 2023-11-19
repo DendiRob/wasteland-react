@@ -20,8 +20,9 @@ const Poster = () => {
 
     return( 
         <div className="poster">
+            <div className="poster__linkBlock" name='posterScroll'></div>
             <div className="poster__banner">
-                <a href="#" className="poster__banner_link">
+                <a href="https://soonaverse.com/collection/0xa19c0ff5f9092a55ae4f559063db7458625090e2" rel="noopener noreferrer" target='_blank' className="poster__banner_link">
                     {isTextVisible ? (
                         <img className="poster__banner_img" src={warAndGirl} alt="bannertext"/>
                     ) : (

@@ -9,6 +9,7 @@ const About = () => {
         <div className="about">
             <img className='about__lights' src={light} alt="light" />
             <div className="about__textBlock about__textBlock_one">
+                <div className="about__linkBlock" name='aboutwsScroll'></div>
                 <h2 className="about__subtitle">About</h2>
                 <div className="about__descrTitle">Wasteland Sirens</div>
                 <p>

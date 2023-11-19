@@ -3,7 +3,7 @@
     max-width: 400px;
     padding: 32px;
     height: 100%;
-    max-height: 250px;
+    max-height: 200px;
     background-color: #000000;
     border-radius: 24px;
     position: relative;
@@ -59,26 +59,6 @@
         font-style: normal;
         font-weight: 500;
         padding-bottom: 24px;
-    }
-    &__rights {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 123px;
-        display: flex;
-        justify-content: space-between;       
-        align-items: center;
-        &_title {
-            color: #FFF;
-            font-family: Unbounded;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            opacity: 0.4;
-            cursor: pointer;
-        }
     }
     &__close {
         position: absolute;

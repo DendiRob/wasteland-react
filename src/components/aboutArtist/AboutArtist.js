@@ -7,6 +7,7 @@ const AboutArtist = () => {
     return(
         <div className="aboutArtist">
                     <div className="aboutArtist__textBlock">
+                        <div className="aboutArtist__linkBlock" name='aboutartistScroll'></div>
                         <p>
                             <span>About artist</span>
                             Hi, my name is Mac aka BingoBobgoApe. I am a digital artist and have been painting NFT for a few years now. 

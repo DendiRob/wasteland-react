@@ -1,5 +1,6 @@
 .poster {
     margin-top: 190px;
+    position: relative;
     &__banner {
         background: url('../../resources/img/poster/poster-desktop.png') 50%/cover no-repeat;
         width: 100%;
@@ -28,6 +29,12 @@
                 animation-iteration-count: infinite;
             }
         }
+    }
+    &__linkBlock {
+        width: 200px;
+        height: 20px;
+        position: absolute;
+        top: -80px;
     }
 }
 @keyframes closer {

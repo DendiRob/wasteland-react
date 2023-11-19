@@ -20,6 +20,7 @@
         display: flex;
         justify-content: space-between;
         &_link {
+            cursor: pointer;
             text-decoration: none;
             color:rgba(255, 255, 255, 0.70);
             font-size: 14px;
