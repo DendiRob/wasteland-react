@@ -5,7 +5,8 @@ const initialState = {
     isMenuOpen: false,
     isConnectModalOpen: false,
     userAcc: '',
-    nftModal: false
+    nftModal: false,
+    receivedNft: ''
 }
 
 export const connectToAcc = createAsyncThunk(

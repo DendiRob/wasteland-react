@@ -5,11 +5,15 @@ import './Promo-media.scss';
 
 import promoGirl from '../../resources/icons/promo/promo-girl.png';
 import contarctData from '../../collection.json';
-import { useSelector } from 'react-redux';
-import { BigNumber } from "ethers";
+import { useDispatch, useSelector } from 'react-redux';
+import { openNftModal } from '../../store/mainSlice';
+
 
 const Promo = () => {
+
     const { userAcc } = useSelector(store => store.mainStates);
+    const dispatch = useDispatch()
+
     const onMint = async () => {
         if(userAcc !== ''){
             try {
@@ -19,9 +23,11 @@ const Promo = () => {
 
                 let tx = await contract.connect(signer).mint({value: await contract.PRICE()});
                 const tokenID = await contract.currentTokenId()
-                console.log(parseInt(tokenID._hex, 16))
+
+                const photoNUmber = parseInt(tokenID._hex, 16)
+                dispatch(openNftModal())
             } catch (error) {
-                console.log(error)
+                throw Error('something went wrong')
             }
         }   
     }
