@@ -47,8 +47,10 @@ const MenuSlice = createSlice({
         closeNftModal(state) {
             state.nftModal = false
         },
-        openNftModal(state) {
-            state.nftModal = true
+        openNftModal(state, action) {
+            state.receivedNft = action.payload;
+            console.log(state.receivedNft)
+            state.nftModal = true;
         }
     },
     extraReducers: (builder) => {
@@ -71,6 +73,7 @@ export const {
     setUserAcc, 
     logOut,
     closeNftModal,
-    openNftModal
+    openNftModal,
+    setReceivedNft
 } = MenuSlice.actions;
 export default MenuSlice.reducer;

@@ -6,7 +6,7 @@ import './Promo-media.scss';
 import promoGirl from '../../resources/icons/promo/promo-girl.png';
 import contarctData from '../../collection.json';
 import { useDispatch, useSelector } from 'react-redux';
-import { openNftModal } from '../../store/mainSlice';
+import { openNftModal, setReceivedNft } from '../../store/mainSlice';
 
 
 const Promo = () => {
@@ -23,9 +23,9 @@ const Promo = () => {
 
                 let tx = await contract.connect(signer).mint({value: await contract.PRICE()});
                 const tokenID = await contract.currentTokenId()
+                const photoNumber = parseInt(tokenID._hex, 16)
 
-                const photoNUmber = parseInt(tokenID._hex, 16)
-                dispatch(openNftModal())
+                dispatch(openNftModal(photoNumber))
             } catch (error) {
                 throw Error('something went wrong')
             }

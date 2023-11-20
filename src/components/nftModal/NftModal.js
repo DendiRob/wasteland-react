@@ -7,27 +7,27 @@ import { loadFull } from "tsparticles";
 
 import girlForExample from '../../resources/img/nft/girlexample.png';
 import flowers from '../../resources/icons/nft/flowers.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { closeNftModal } from '../../store/mainSlice';
 
 
 const NftModal = () => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+  const {receivedNft} = useSelector(store => store.mainStates);
+
 
     const particlesInit = async (main) => {
-        console.log(main);
         await loadFull(main);
     };
     const particlesLoaded = (container) => {
-    console.log(container);
     };
   
 
     return( 
         <div className="nftModal">
             <div className="nftModal__wrapper">
-                <img src={girlForExample} alt="nft" className="nftModal__img" />
+                <img src={`https://apedao.mypinata.cloud/ipfs/QmNbZSywnbrf4HSAzDX1jvdvwCkHKgRACChZXF4j1t3X4S/${receivedNft}.png`} alt="nft" className="nftModal__img" />
                 <div className="nftModal__ready">
                     <div className="nftModal__ready_title">Your NFT is ready</div>
                     <img src={flowers} alt="flowers" className="nftModal__ready_flowers" />

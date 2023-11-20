@@ -23,6 +23,7 @@ import { useEffect } from 'react';
 function App() {
 
   const {isConnectModalOpen, nftModal} = useSelector(store => store.mainStates);
+
   const dispatch = useDispatch()
   
   useEffect(() => {
