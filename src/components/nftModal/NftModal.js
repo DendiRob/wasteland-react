@@ -11,10 +11,10 @@ import { closeNftModal } from '../../store/mainSlice';
 import { useState, useEffect } from 'react';
 
 
-const NftModal = ({receivedNft}) => {
+const NftModal = () => {
 
     const dispatch = useDispatch();
-    // const {receivedNft} = useSelector(store => store.mainStates);
+    const {nftModal, receivedNft} = useSelector(store => store.mainStates);
 
     const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -25,24 +25,29 @@ const NftModal = ({receivedNft}) => {
     const particlesLoaded = (container) => {
     };
 
-    // const imageUrl = `https://apedao.mypinata.cloud/ipfs/QmNbZSywnbrf4HSAzDX1jvdvwCkHKgRACChZXF4j1t3X4S/${receivedNft}.png`
     
-    // useEffect(() => {
-       
-    //     };
-    //   }, [imageUrl,receivedNft,dispatch]);
+    useEffect(() => {
+        console.log('mount')
+        return () => {
+            console.log(receivedNft, 'unmount')
+        }
+    })
 
     return( 
         <div className="nftModal" style={{
             display: imageLoaded? 'flex' : 'none'
         }}>
             <div className="nftModal__wrapper">
-                <img 
-                src={`https://apedao.mypinata.cloud/ipfs/QmNbZSywnbrf4HSAzDX1jvdvwCkHKgRACChZXF4j1t3X4S/${receivedNft}.png`} 
-                alt="nft" 
-                className="nftModal__img" 
-                onLoad={() => setImageLoaded(true)}
-                />
+                {   nftModal?
+                    <img 
+                    src={`https://apedao.mypinata.cloud/ipfs/QmNbZSywnbrf4HSAzDX1jvdvwCkHKgRACChZXF4j1t3X4S/${receivedNft}.png`} 
+                    alt="nft" 
+                    className="nftModal__img" 
+                    onLoad={() => setImageLoaded(true)}
+                    />
+                    :
+                    ''
+                }
                 <div className="nftModal__ready">
                     <div className="nftModal__ready_title">Your NFT is ready</div>
                     <img src={flowers} alt="flowers" className="nftModal__ready_flowers" />

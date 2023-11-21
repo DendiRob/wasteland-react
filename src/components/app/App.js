@@ -20,13 +20,13 @@ import NftModal from '../nftModal/NftModal';
 
 function App() {
 
-  const {isConnectModalOpen, nftModal, receivedNft} = useSelector(store => store.mainStates);
+  const {isConnectModalOpen, nftModal} = useSelector(store => store.mainStates);
   
   
   return (
     <>
       {isConnectModalOpen ? <ConnectModal /> : ''}
-      {nftModal ? <NftModal receivedNft={receivedNft}/> : ''}
+      {nftModal ? <NftModal /> : ''}
       <Menu />
       <div className="container">
       <Header />

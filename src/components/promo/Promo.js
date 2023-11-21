@@ -29,7 +29,7 @@ const Promo = () => {
                     dispatch(openNftModal(photoNumber))
                 },5000)
             } catch (error) {
-                alert(error)
+                console.log(error)
             }
         }else{
             alert('Please, connect wallet')
