@@ -7,7 +7,7 @@ import { loadFull } from "tsparticles";
 
 import flowers from '../../resources/icons/nft/flowers.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeNftModal, setNftImage } from '../../store/mainSlice';
+import { closeNftModal } from '../../store/mainSlice';
 import { useState, useEffect } from 'react';
 
 
@@ -30,12 +30,13 @@ const NftModal = ({receivedNft}) => {
     useEffect(() => {
         const imageNft = new Image()
         imageNft.src = imageUrl;
-        imageNft.onload = () => setImageLoaded(true);
+        imageNft.onload = () => {
+            setImageLoaded(true)
+        };
 
         return () => {
-        imageNft.onload = null;
-        dispatch(setNftImage())
         setImageLoaded(false)
+        imageNft.onload = null;
         };
       }, [imageUrl,receivedNft,dispatch]);
 

@@ -41,10 +41,8 @@ const MenuSlice = createSlice({
             state.isConnectModalOpen = false
         },
         closeNftModal(state) {
-            state.nftModal = false
-        },
-        setNftImage(state){
-            state.receivedNft = ''
+            state.nftModal = false;
+            state.receivedNft = '';
         },
         openNftModal(state, action) {
             state.receivedNft = action.payload;
@@ -71,6 +69,5 @@ export const {
     logOut,
     closeNftModal,
     openNftModal,
-    setNftImage
 } = MenuSlice.actions;
 export default MenuSlice.reducer;
