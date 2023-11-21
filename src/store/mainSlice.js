@@ -41,8 +41,8 @@ const MenuSlice = createSlice({
             state.isConnectModalOpen = false
         },
         closeNftModal(state) {
-            state.nftModal = false;
             state.receivedNft = '';
+            state.nftModal = false;
         },
         openNftModal(state, action) {
             state.receivedNft = action.payload;

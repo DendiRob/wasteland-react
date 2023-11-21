@@ -11,10 +11,11 @@ import { openNftModal} from '../../store/mainSlice';
 
 const Promo = () => {
 
-    const { userAcc } = useSelector(store => store.mainStates);
+    const { userAcc, receivedNft } = useSelector(store => store.mainStates);
     const dispatch = useDispatch()
 
     const onMint = async () => {
+        console.log(receivedNft)
         if(userAcc !== ''){
             try {
                 let provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -24,8 +25,9 @@ const Promo = () => {
                 await contract.connect(signer).mint({value: await contract.PRICE()});
                 const tokenID = await contract.currentTokenId()
                 const photoNumber = parseInt(tokenID._hex, 16)
-                dispatch(openNftModal(photoNumber))
-                
+                setTimeout(() => {
+                    dispatch(openNftModal(photoNumber))
+                },5000)
             } catch (error) {
                 alert(error)
             }
