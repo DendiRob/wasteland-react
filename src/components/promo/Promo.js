@@ -6,7 +6,7 @@ import './Promo-media.scss';
 import promoGirl from '../../resources/icons/promo/promo-girl.png';
 import contarctData from '../../collection.json';
 import { useDispatch, useSelector } from 'react-redux';
-import { openNftModal, setReceivedNft } from '../../store/mainSlice';
+import { openNftModal } from '../../store/mainSlice';
 
 
 const Promo = () => {
@@ -21,7 +21,7 @@ const Promo = () => {
                 let signer = provider.getSigner();
                 let contract = new ethers.Contract(contarctData.address, contarctData.abi, signer);
 
-                let tx = await contract.connect(signer).mint({value: await contract.PRICE()});
+                await contract.connect(signer).mint({value: await contract.PRICE()});
                 const tokenID = await contract.currentTokenId()
                 const photoNumber = parseInt(tokenID._hex, 16)
 

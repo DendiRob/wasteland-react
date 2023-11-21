@@ -74,6 +74,5 @@ export const {
     logOut,
     closeNftModal,
     openNftModal,
-    setReceivedNft
 } = MenuSlice.actions;
 export default MenuSlice.reducer;

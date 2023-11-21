@@ -5,16 +5,19 @@ import PartConf from '../../configs/particlesConfig.json';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-import girlForExample from '../../resources/img/nft/girlexample.png';
 import flowers from '../../resources/icons/nft/flowers.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeNftModal } from '../../store/mainSlice';
+import { useState, useEffect } from 'react';
 
 
 const NftModal = () => {
 
     const dispatch = useDispatch();
-  const {receivedNft} = useSelector(store => store.mainStates);
+    const {receivedNft} = useSelector(store => store.mainStates);
+
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [imageNft] = useState(new Image());
 
 
     const particlesInit = async (main) => {
@@ -22,12 +25,25 @@ const NftModal = () => {
     };
     const particlesLoaded = (container) => {
     };
-  
+
+    const imageUrl = `https://apedao.mypinata.cloud/ipfs/QmNbZSywnbrf4HSAzDX1jvdvwCkHKgRACChZXF4j1t3X4S/${receivedNft}.png`
+    
+    useEffect(() => {
+        
+        imageNft.src = imageUrl;
+        imageNft.onload = () => setImageLoaded(true);
+
+        return () => {
+        imageNft.onload = null;
+        };
+      }, [imageUrl,imageNft]);
 
     return( 
-        <div className="nftModal">
+        <div className="nftModal" style={{
+            display: imageLoaded? 'flex' : 'none'
+        }}>
             <div className="nftModal__wrapper">
-                <img src={`https://apedao.mypinata.cloud/ipfs/QmNbZSywnbrf4HSAzDX1jvdvwCkHKgRACChZXF4j1t3X4S/${receivedNft}.png`} alt="nft" className="nftModal__img" />
+                <img src={imageNft.src} alt="nft" className="nftModal__img" />
                 <div className="nftModal__ready">
                     <div className="nftModal__ready_title">Your NFT is ready</div>
                     <img src={flowers} alt="flowers" className="nftModal__ready_flowers" />
