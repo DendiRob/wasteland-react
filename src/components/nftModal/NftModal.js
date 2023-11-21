@@ -8,7 +8,7 @@ import { loadFull } from "tsparticles";
 import flowers from '../../resources/icons/nft/flowers.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeNftModal } from '../../store/mainSlice';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 const NftModal = () => {
@@ -22,16 +22,10 @@ const NftModal = () => {
     const particlesInit = async (main) => {
         await loadFull(main);
     };
-    const particlesLoaded = (container) => {
-    };
+    // const particlesLoaded = (container) => {
+    // };
 
-    
-    useEffect(() => {
-        console.log('mount')
-        return () => {
-            console.log(receivedNft, 'unmount')
-        }
-    })
+
 
     return( 
         <div className="nftModal" style={{
@@ -58,7 +52,7 @@ const NftModal = () => {
             <Particles
             id="tsparticles"
             init={particlesInit}
-            loaded={particlesLoaded}
+            // loaded={particlesLoaded}
             options={PartConf}
             />
         </div>

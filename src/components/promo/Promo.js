@@ -11,11 +11,10 @@ import { openNftModal} from '../../store/mainSlice';
 
 const Promo = () => {
 
-    const { userAcc, receivedNft } = useSelector(store => store.mainStates);
+    const { userAcc } = useSelector(store => store.mainStates);
     const dispatch = useDispatch()
 
     const onMint = async () => {
-        console.log(receivedNft)
         if(userAcc !== ''){
             try {
                 let provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -29,7 +28,7 @@ const Promo = () => {
                     dispatch(openNftModal(photoNumber))
                 },5000)
             } catch (error) {
-                console.log(error)
+                alert(error.data?.message || error )
             }
         }else{
             alert('Please, connect wallet')
@@ -51,7 +50,6 @@ const Promo = () => {
                             </div>
                         </div>
                     </div>
-                    {/* <div className="promo__paper"></div> */}
             </div>
     )
 }
