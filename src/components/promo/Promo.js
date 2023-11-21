@@ -24,8 +24,8 @@ const Promo = () => {
                 await contract.connect(signer).mint({value: await contract.PRICE()});
                 const tokenID = await contract.currentTokenId()
                 const photoNumber = parseInt(tokenID._hex, 16)
-
                 dispatch(openNftModal(photoNumber))
+                
             } catch (error) {
                 alert(error)
             }

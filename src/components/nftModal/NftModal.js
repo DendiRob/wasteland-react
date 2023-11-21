@@ -11,10 +11,10 @@ import { closeNftModal, setNftImage } from '../../store/mainSlice';
 import { useState, useEffect } from 'react';
 
 
-const NftModal = () => {
+const NftModal = ({receivedNft}) => {
 
     const dispatch = useDispatch();
-    const {receivedNft} = useSelector(store => store.mainStates);
+    // const {receivedNft} = useSelector(store => store.mainStates);
 
     const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -35,8 +35,9 @@ const NftModal = () => {
         return () => {
         imageNft.onload = null;
         dispatch(setNftImage())
+        setImageLoaded(false)
         };
-      }, [imageUrl,dispatch]);
+      }, [imageUrl,receivedNft,dispatch]);
 
     return( 
         <div className="nftModal" style={{
