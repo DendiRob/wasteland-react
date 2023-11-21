@@ -36,20 +36,18 @@ const MenuSlice = createSlice({
         closeConnectModal(state) {
             state.isConnectModalOpen = false;
         },
-        setUserAcc(state) {
-            state.userAcc = localStorage.getItem("userWallet")
-        },
         logOut(state) {
             state.userAcc = '';
-            localStorage.removeItem("userWallet");
             state.isConnectModalOpen = false
         },
         closeNftModal(state) {
             state.nftModal = false
         },
+        setNftImage(state){
+            state.receivedNft = ''
+        },
         openNftModal(state, action) {
             state.receivedNft = action.payload;
-            console.log(state.receivedNft)
             state.nftModal = true;
         }
     },
@@ -60,7 +58,6 @@ const MenuSlice = createSlice({
         })
         .addCase(connectToAcc.fulfilled, (state, action) => {
             state.userAcc = action.payload[0]
-            localStorage.setItem("userWallet", state.userAcc)
             state.isConnectModalOpen = false
         })
     }
@@ -74,5 +71,6 @@ export const {
     logOut,
     closeNftModal,
     openNftModal,
+    setNftImage
 } = MenuSlice.actions;
 export default MenuSlice.reducer;

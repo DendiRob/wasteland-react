@@ -27,9 +27,11 @@ const Promo = () => {
 
                 dispatch(openNftModal(photoNumber))
             } catch (error) {
-                throw Error('something went wrong')
+                alert(error)
             }
-        }   
+        }else{
+            alert('Please, connect wallet')
+        }
     }
 
     return (
