@@ -1,3 +1,45 @@
+@media (max-width: 1113px) {
+    .drawingFor {
+        &__board {
+            &_item {
+                &-point {
+                    margin: 0 75px;
+                }
+                &-first {
+                    width: 160px;
+                }
+                &-second {
+                    width: 210px;
+                }
+                &-third {
+                    width: 125px;
+                }
+            }
+            
+        }
+    }
+}
+@media (max-width: 842px) {
+    .drawingFor {
+        &__board {
+            &_item {
+                &-point {
+                    margin: 0 57px;
+                }
+                &-first {
+                    width: 120px;
+                }
+                &-second {
+                    width: 170px;
+                }
+                &-third {
+                    width: 95px;
+                }
+            }
+            
+        }
+    }
+}
 @media (max-width: 650px) {
     .drawingFor {
         width: 100%;
@@ -13,8 +55,15 @@
                 &-point {
                     display: none;
                 }
+                &-first {
+                    width: 170px;
+                }
+                &-second {
+                    width: 270px;
+                }
                 &-third {
                     display: block;
+                    width: 120px;
                     transform: rotate(0deg);
                 }
             }

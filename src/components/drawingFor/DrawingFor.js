@@ -11,9 +11,9 @@ const DrawingFor = () => {
         <div className="drawingFor">
             <div className="drawingFor__title">drawing for</div>
             <div className="drawingFor__board">
-                <img src={firstLogo} alt="firstlogo" className="drawingFor__board_item"/>
+                <img src={firstLogo} alt="firstlogo" className="drawingFor__board_item drawingFor__board_item-first"/>
                 <div className="drawingFor__board_item drawingFor__board_item-point"></div>
-                <img src={secondLogo} alt="secondlogo" className="drawingFor__board_item"/>
+                <img src={secondLogo} alt="secondlogo" className="drawingFor__board_item drawingFor__board_item-second"/>
                 <div className="drawingFor__board_item drawingFor__board_item-point"></div>
                 <img src={thirdLogo} alt="threelogo" className="drawingFor__board_item drawingFor__board_item-third"/>
             </div>

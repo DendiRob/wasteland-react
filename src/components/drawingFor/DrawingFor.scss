@@ -17,7 +17,8 @@
         background-color: #FBE700;
         margin-top: 20px;
         display: flex;
-        justify-content: space-around;
+        // justify-content: space-around;
+        justify-content: center ;
         align-items: center;
         &_item{
             transform: rotate(-4deg);
@@ -25,10 +26,14 @@
                 width: 9px;
                 height: 9px;
                 border-radius: 100%;
+                margin: 0 114px;
                 background-color: #000;
             }
+            &-first {
+                width: 170px;
+            }
             &-third {
-                display: none;
+                width: 125px;
             }
         }
     }

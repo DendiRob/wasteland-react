@@ -4,7 +4,7 @@ import './Promo.scss';
 import './Promo-media.scss';
 
 import promoGirl from '../../resources/icons/promo/promo-girl.png';
-import contarctData from '../../collection.json';
+import contarctData from '../../сollection.json';
 import { useDispatch, useSelector } from 'react-redux';
 import { openNftModal} from '../../store/mainSlice';
 
