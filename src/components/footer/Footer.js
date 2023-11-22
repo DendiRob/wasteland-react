@@ -7,6 +7,9 @@ import twitter from '../../resources/icons/header/twitter.svg';
 import telegram from '../../resources/icons/header/telegram.svg';
 import logo from '../../resources/icons/header/logo.png';
 
+import { Link } from "react-scroll";
+
+
 
 const Footer = () => {
 
@@ -16,10 +19,39 @@ const Footer = () => {
             <div className="footer__content">
                 <img src={logo} alt="logo" className="content__logo" />
                 <ul className="content__nav">
-                    <li className="content__nav_item"><a href="#promo" className="header__nav_link">Home</a></li>
-                    <li className="content__nav_item" ><a href="#aboutws" className="header__nav_link">About WS</a></li>
-                    <li className="content__nav_item"><a href="#aboutartist" className="header__nav_link">Artist</a></li>
-                    <li className="content__nav_item" ><a href="#poster" className="header__nav_link">WW</a></li>
+                    <li className="content__nav_item">
+                        <Link
+                        to="promoScroll" 
+                        smooth={true}
+                        duration={700} 
+                        className="header__nav_link"
+                        >Home</Link>
+
+                    </li>
+                    <li className="content__nav_item">
+                        <Link 
+                        to="aboutwsScroll" 
+                        smooth={true}
+                        duration={700} 
+                        className="header__nav_link"
+                        >About WS</Link>
+                    </li>
+                    <li className="content__nav_item">
+                        <Link
+                        to="aboutartistScroll" 
+                        smooth={true}
+                        duration={700} 
+                        className="header__nav_link"
+                        >Artist</Link>
+                    </li>
+                    <li className="content__nav_item">
+                        <Link
+                        to="posterScroll" 
+                        smooth={true}
+                        duration={700}
+                        className="header__nav_link"
+                        >WW</Link>
+                    </li>
                 </ul>
                 <div className="content__social">
                     <div className="content__social_title">We are on social media</div>

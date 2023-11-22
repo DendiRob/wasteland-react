@@ -14,7 +14,7 @@ import { Link } from "react-scroll";
 
 export const shortName = (name) => {
     if(name.length > 14){
-        return name.substring(0,14) + '...'
+        return name.substring(0,6) + '...' + name.substr(name.length - 6);
     }else {
         return name
     }
@@ -74,7 +74,9 @@ const Header = () => {
                     <div className="connect__burger_item"></div>
                     <div className="connect__burger_item"></div>
                 </div>
-                <div className="connect__btn" onClick={() => dispatch(openConnectModal())}>{userAcc !== ''? shortName(userAcc) : 'Connect Wallet'}</div>
+                <div className="connect__btn" onClick={() => {
+                    dispatch(openConnectModal())
+                    }}>{userAcc !== ''? shortName(userAcc) : 'Connect Wallet'}</div>
             </div>
         </header>
     )
