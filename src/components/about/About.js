@@ -20,7 +20,12 @@ const About = () => {
                 <p>Mysterious girls, exploring the wastelands, representing hope and danger in one person.</p>
             </div>
             <div className="about-wrapper">
-                <img className="about__girl" src={aboutGirl} alt="about-girl" />
+                <div className="about__girl">
+                    <div className='about__bwFace'></div>
+                    <div className='about__pointsOnFace'></div>
+                    <img src={aboutGirl} alt="about-girl" />
+                    <div className='about__bwBody'></div>
+                </div>
                 <div className="about__textBlock about__textBlock_three">
                     <p>
                         <span>*</span>Having a pair of Wasteland Warlords and Wasteland Sirens will allow you to get unique NFTs

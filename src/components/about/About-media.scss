@@ -44,6 +44,19 @@
     .about {
         padding: 10px;
         padding-top: 140px;
+        &__bwFace {
+            height: 110px;
+            top: 25px;
+        }
+        &__pointsOnFace{
+            height: 71px;
+            top: 133px;
+            width: 250px;
+        }
+        &__bwBody {
+            height: 170px;
+            bottom: 0;
+        }
         &__textBlock {
             p {
                 font-size: 20px;
@@ -62,7 +75,9 @@
                 font-size: 20px;
         }
         &__girl {
-            width: 320px;
+            img {
+                width: 320px;
+            }
         }
     }
 }
